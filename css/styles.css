@@ -26,7 +26,11 @@ body {
   display: block; /* Ensure visibility */
 }
 
-.header h1, .header h2 {
+.header .container {
+  padding: 8px 15px; /* Custom padding: 8px top/bottom, 15px left/right */
+}
+
+.header h1, .header h2, .header p {
   font-family: 'Poppins', sans-serif;
   margin: 0; /* Remove default margin */
 }
@@ -36,22 +40,25 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   color: #4da8da; /* Theme color */
-  margin-bottom: 5px; /* Further reduced */
+  line-height: 1.2; /* Tighten line height */
 }
 
 .header .lead {
-  margin-bottom: 5px; /* Further reduced */
+  line-height: 1.2; /* Tighten line height */
 }
 
 .header .intro-text {
   font-size: 0.95rem;
   color: #e0e0e0; /* Auxiliary color */
-  margin-bottom: 8px; /* Further reduced */
+  line-height: 1.3; /* Tighten line height */
+}
+
+.header .header-content {
+  margin-bottom: 5px; /* Minimal spacing below content */
 }
 
 .header h2 {
   font-size: 1.6rem;
-  margin-bottom: 20px;
   position: relative;
   color: #4da8da; /* Theme color */
 }
@@ -68,7 +75,7 @@ body {
 
 /* Header Navigation */
 .header-nav {
-  margin-top: 5px; /* Further reduced */
+  margin-top: 2px; /* Minimal spacing above navigation */
 }
 
 .header-nav .nav {
@@ -80,7 +87,7 @@ body {
   color: #e0e0e0; /* Auxiliary color */
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  padding: 8px 15px; /* Reduced vertical padding */
+  padding: 5px 15px; /* Further reduced vertical padding */
   transition: color 0.3s ease, background 0.3s ease;
   pointer-events: auto; /* Ensure links are clickable */
   cursor: pointer; /* Indicate clickability */
@@ -121,7 +128,7 @@ body {
 .main-content {
   width: 100%; /* Full width */
   padding: 20px;
-  padding-top: 200px; /* Adjusted for reduced header height */
+  padding-top: 150px; /* Adjusted for significantly reduced header height */
   background-color: #1a1a1a;
   display: block; /* Ensure visibility */
   visibility: visible; /* Ensure visibility */
@@ -247,28 +254,40 @@ a:hover {
   right: 30px;
   background: #4da8da; /* Theme color */
   color: #e0e0e0; /* Auxiliary color */
-  width: 60px; /* Increased size */
-  height: 60px; /* Increased size */
+  width: 70px; /* Increased size */
+  height: 70px; /* Increased size */
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 2px solid #e0e0e0; /* Added border for prominence */
+  border: 3px solid #e0e0e0; /* Thicker border for prominence */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  opacity: 0.8; /* Slightly increased opacity */
-  transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
+  opacity: 0.9; /* Increased opacity */
+  transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   pointer-events: auto; /* Ensure clickable */
   z-index: 1000;
 }
 
 .back-to-top i {
-  font-size: 1.5rem; /* Increased icon size */
+  font-size: 1.8rem; /* Increased icon size */
 }
 
 .back-to-top:hover {
   opacity: 1; /* Fully opaque on hover */
   background: #e0e0e0; /* Auxiliary color */
   color: #4da8da; /* Theme color */
+  transform: scale(1.1); /* Slight scale on hover for emphasis */
+}
+
+/* Add a subtle pulse animation to draw attention */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.back-to-top {
+  animation: pulse 2s infinite;
 }
 
 /* Footer */
@@ -300,11 +319,11 @@ footer {
   }
 
   .header-nav .nav-link {
-    padding: 8px 0; /* Adjusted vertical padding */
+    padding: 5px 0; /* Adjusted vertical padding */
   }
 
   .main-content {
-    padding-top: 300px; /* Adjusted for reduced header height on smaller screens */
+    padding-top: 250px; /* Adjusted for reduced header height on smaller screens */
   }
 }
 
@@ -330,13 +349,14 @@ footer {
   }
 
   .back-to-top {
-    width: 50px; /* Adjusted size for smaller screens */
-    height: 50px; /* Adjusted size for smaller screens */
+    width: 60px; /* Adjusted size for smaller screens */
+    height: 60px; /* Adjusted size for smaller screens */
     bottom: 15px;
     right: 15px;
+    border-width: 2px; /* Slightly thinner border */
   }
 
   .back-to-top i {
-    font-size: 1.2rem; /* Adjusted icon size for smaller screens */
+    font-size: 1.5rem; /* Adjusted icon size for smaller screens */
   }
 }
