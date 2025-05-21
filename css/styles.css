@@ -70,6 +70,8 @@ body {
   font-size: 1.1rem;
   padding: 10px 0;
   transition: color 0.3s ease, background 0.3s ease;
+  pointer-events: auto; /* Ensure links are clickable */
+  cursor: pointer; /* Indicate clickability */
 }
 
 .sidebar-nav .nav-link:hover {
@@ -103,6 +105,7 @@ body {
   padding: 20px;
   background-color: #1a1a1a;
   display: block; /* Ensure visibility */
+  visibility: visible; /* Ensure visibility */
 }
 
 h2 {
@@ -211,6 +214,7 @@ a {
   color: #4da8da; /* Theme color */
   text-decoration: none;
   transition: color 0.3s ease;
+  pointer-events: auto; /* Ensure links are clickable */
 }
 
 a:hover {
