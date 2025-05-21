@@ -4,7 +4,7 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  box-sizing: border-book;
+  box-sizing: border-box;
   scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
 }
 
@@ -90,7 +90,7 @@ body {
 .main-content {
   width: 100%;
   padding: 20px;
-  padding-top: 310px; /* Adjusted to match header height (~90px) + offset (200px) + buffer */
+  padding-top: 160px; /* Adjusted to match header height (~90px) + offset (150px) - header height + buffer */
   background-color: #1a1a1a;
   display: block;
   visibility: visible;
@@ -100,8 +100,8 @@ body {
 section[id]::before {
   content: "";
   display: block;
-  height: 300px; /* Increased offset to ensure visibility below header */
-  margin-top: -300px; /* Negative margin to position above the section */
+  height: 150px; /* Decreased offset to bring section closer to header */
+  margin-top: -150px; /* Negative margin to position above the section */
   visibility: hidden;
 }
 
@@ -293,7 +293,7 @@ footer {
   }
 
   .main-content {
-    padding-top: 330px; /* Adjusted for header height + increased offset */
+    padding-top: 180px; /* Adjusted for header height + decreased offset */
   }
 }
 
