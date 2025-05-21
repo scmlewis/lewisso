@@ -218,48 +218,6 @@ a:hover {
   color: #e0e0e0; /* Auxiliary color */
 }
 
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #4da8da; /* Theme color */
-  color: #e0e0e0; /* Auxiliary color */
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 3px solid #e0e0e0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  opacity: 0.9;
-  transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  pointer-events: auto;
-  z-index: 1001;
-}
-
-.back-to-top i {
-  font-size: 1.8rem;
-}
-
-.back-to-top:hover {
-  opacity: 1;
-  background: #e0e0e0;
-  color: #4da8da;
-  transform: scale(1.1);
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.back-to-top {
-  animation: pulse 2s infinite;
-}
-
 /* Footer */
 footer {
   margin-top: 40px;
@@ -318,10 +276,5 @@ footer {
 
   .header-nav .nav-link {
     font-size: 0.9rem;
-  }
-
-  /* Hide Back to Top button on mobile */
-  .back-to-top {
-    display: none;
   }
 }
