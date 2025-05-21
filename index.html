@@ -10,8 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome for Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <!-- AOS CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -41,7 +39,7 @@
   <!-- Main Content -->
   <div class="main-content">
     <!-- About Me Section -->
-    <section id="about" class="py-5 text-light about-bg" data-aos="fade-up">
+    <section id="about" class="py-5 text-light about-bg">
       <div class="container">
         <h2><i class="fas fa-user me-2"></i>About Me</h2>
         <div class="content-box p-4 rounded shadow-sm">
@@ -60,7 +58,7 @@
     <div class="section-divider"></div>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-5 text-light experience-bg" data-aos="fade-up">
+    <section id="experience" class="py-5 text-light experience-bg">
       <div class="container">
         <h2><i class="fas fa-briefcase me-2"></i>Experience</h2>
         <div class="experience-card p-4 mb-4 rounded shadow-sm">
@@ -142,7 +140,7 @@
     <div class="section-divider"></div>
 
     <!-- Education Section -->
-    <section id="education" class="py-5 text-light education-bg" data-aos="fade-up">
+    <section id="education" class="py-5 text-light education-bg">
       <div class="container">
         <h2><i class="fas fa-graduation-cap me-2"></i>Education</h2>
         <div class="content-box p-4 rounded shadow-sm">
@@ -157,7 +155,7 @@
     <div class="section-divider"></div>
 
     <!-- Skills & Certifications Section -->
-    <section id="skills" class="py-5 text-light skills-bg" data-aos="fade-up">
+    <section id="skills" class="py-5 text-light skills-bg">
       <div class="container">
         <h2><i class="fas fa-star me-2"></i>Skills & Certifications</h2>
         <div class="content-box p-4 rounded shadow-sm">
@@ -199,36 +197,22 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <!-- Custom JavaScript -->
   <script>
-    // Wait for the window to load to ensure AOS is available
-    window.onload = function() {
-      if (typeof AOS !== 'undefined') {
-        AOS.init({
-          duration: 800,
-          once: true
-        });
-      } else {
-        console.error('AOS library failed to load.');
-      }
-
-      // Smooth Scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            const offsetTop = target.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
-          }
-        });
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
       });
-    };
+    });
   </script>
 </body>
 </html>
