@@ -27,12 +27,13 @@ body {
 }
 
 .header .container {
-  padding: 8px 15px; /* Custom padding: 8px top/bottom, 15px left/right */
+  padding: 5px 15px; /* Minimal padding: 5px top/bottom, 15px left/right */
 }
 
 .header h1, .header h2, .header p {
   font-family: 'Poppins', sans-serif;
   margin: 0; /* Remove default margin */
+  padding: 0; /* Remove any padding */
 }
 
 .header h1.display-4 {
@@ -40,54 +41,48 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   color: #4da8da; /* Theme color */
-  line-height: 1.2; /* Tighten line height */
+  line-height: 1.1; /* Even tighter line height */
 }
 
 .header .lead {
-  line-height: 1.2; /* Tighten line height */
+  line-height: 1.1; /* Even tighter line height */
 }
 
 .header .intro-text {
   font-size: 0.95rem;
   color: #e0e0e0; /* Auxiliary color */
-  line-height: 1.3; /* Tighten line height */
+  line-height: 1.2; /* Even tighter line height */
 }
 
 .header .header-content {
-  margin-bottom: 5px; /* Minimal spacing below content */
-}
-
-.header h2 {
-  font-size: 1.6rem;
-  position: relative;
-  color: #4da8da; /* Theme color */
-}
-
-.header h2::after {
-  content: '';
-  width: 40px;
-  height: 3px;
-  background: #4da8da; /* Theme color */
-  position: absolute;
-  bottom: -8px;
-  left: 0;
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
 }
 
 /* Header Navigation */
 .header-nav {
-  margin-top: 2px; /* Minimal spacing above navigation */
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
 }
 
 .header-nav .nav {
   flex-direction: row; /* Horizontal layout on wider screens */
   justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .nav-item {
+  margin: 0;
+  padding: 0;
 }
 
 .header-nav .nav-link {
   color: #e0e0e0; /* Auxiliary color */
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  padding: 5px 15px; /* Further reduced vertical padding */
+  padding: 2px 15px; /* Minimal vertical padding */
+  margin: 0;
   transition: color 0.3s ease, background 0.3s ease;
   pointer-events: auto; /* Ensure links are clickable */
   cursor: pointer; /* Indicate clickability */
@@ -128,7 +123,7 @@ body {
 .main-content {
   width: 100%; /* Full width */
   padding: 20px;
-  padding-top: 150px; /* Adjusted for significantly reduced header height */
+  padding-top: 120px; /* Adjusted for minimized header height */
   background-color: #1a1a1a;
   display: block; /* Ensure visibility */
   visibility: visible; /* Ensure visibility */
@@ -254,8 +249,8 @@ a:hover {
   right: 30px;
   background: #4da8da; /* Theme color */
   color: #e0e0e0; /* Auxiliary color */
-  width: 70px; /* Increased size */
-  height: 70px; /* Increased size */
+  width: 70px; /* Size remains the same */
+  height: 70px; /* Size remains the same */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,7 +260,7 @@ a:hover {
   opacity: 0.9; /* Increased opacity */
   transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   pointer-events: auto; /* Ensure clickable */
-  z-index: 1000;
+  z-index: 1001; /* Increased z-index to ensure visibility */
 }
 
 .back-to-top i {
@@ -319,11 +314,11 @@ footer {
   }
 
   .header-nav .nav-link {
-    padding: 5px 0; /* Adjusted vertical padding */
+    padding: 2px 0; /* Adjusted vertical padding */
   }
 
   .main-content {
-    padding-top: 250px; /* Adjusted for reduced header height on smaller screens */
+    padding-top: 200px; /* Adjusted for reduced header height on smaller screens */
   }
 }
 
