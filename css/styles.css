@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+}
+section {
+  min-height: 400px;
+}
+h2 {
+  color: #0077b5; /* LinkedIn blue */
+  margin-bottom: 20px;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+footer {
+  margin-top: 20px;
+}
