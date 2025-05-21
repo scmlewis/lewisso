@@ -26,8 +26,11 @@ body {
   display: block; /* Ensure visibility */
 }
 
-.header .container {
-  padding: 5px 15px; /* Minimal padding: 5px top/bottom, 15px left/right */
+.header .container.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px; /* Minimal padding */
 }
 
 .header h1, .header h2, .header p {
@@ -41,33 +44,35 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   color: #4da8da; /* Theme color */
-  line-height: 1.1; /* Even tighter line height */
+  line-height: 1.1; /* Tight line height */
 }
 
 .header .lead {
-  line-height: 1.1; /* Even tighter line height */
+  line-height: 1.1; /* Tight line height */
 }
 
 .header .intro-text {
   font-size: 0.95rem;
   color: #e0e0e0; /* Auxiliary color */
-  line-height: 1.2; /* Even tighter line height */
+  line-height: 1.2; /* Tight line height */
 }
 
 .header .header-content {
-  margin: 0; /* No margin */
-  padding: 0; /* No padding */
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Take available space */
 }
 
 /* Header Navigation */
 .header-nav {
-  margin: 0; /* No margin */
-  padding: 0; /* No padding */
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto; /* Don’t grow or shrink */
 }
 
-.header-nav .nav {
-  flex-direction: row; /* Horizontal layout on wider screens */
-  justify-content: center;
+.header-nav .nav-list {
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -81,11 +86,12 @@ body {
   color: #e0e0e0; /* Auxiliary color */
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  padding: 2px 15px; /* Minimal vertical padding */
+  padding: 2px 10px; /* Minimal padding */
   margin: 0;
   transition: color 0.3s ease, background 0.3s ease;
   pointer-events: auto; /* Ensure links are clickable */
   cursor: pointer; /* Indicate clickability */
+  text-decoration: none;
 }
 
 .header-nav .nav-link:hover {
@@ -123,7 +129,7 @@ body {
 .main-content {
   width: 100%; /* Full width */
   padding: 20px;
-  padding-top: 120px; /* Adjusted for minimized header height */
+  padding-top: 60px; /* Adjusted for side-by-side header layout */
   background-color: #1a1a1a;
   display: block; /* Ensure visibility */
   visibility: visible; /* Ensure visibility */
@@ -249,8 +255,8 @@ a:hover {
   right: 30px;
   background: #4da8da; /* Theme color */
   color: #e0e0e0; /* Auxiliary color */
-  width: 70px; /* Size remains the same */
-  height: 70px; /* Size remains the same */
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,9 +314,14 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .header-nav .nav {
+  .header .container.header-flex {
     flex-direction: column; /* Stack vertically on smaller screens */
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .header-nav .nav-list {
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start;
   }
 
   .header-nav .nav-link {
@@ -318,7 +329,7 @@ footer {
   }
 
   .main-content {
-    padding-top: 200px; /* Adjusted for reduced header height on smaller screens */
+    padding-top: 180px; /* Adjusted for stacked header height on smaller screens */
   }
 }
 
