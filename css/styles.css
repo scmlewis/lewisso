@@ -28,6 +28,7 @@ body {
 
 .header h1, .header h2 {
   font-family: 'Poppins', sans-serif;
+  margin: 0; /* Remove default margin */
 }
 
 .header h1.display-4 {
@@ -35,17 +36,17 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   color: #4da8da; /* Theme color */
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 5px; /* Further reduced */
 }
 
 .header .lead {
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 5px; /* Further reduced */
 }
 
 .header .intro-text {
   font-size: 0.95rem;
   color: #e0e0e0; /* Auxiliary color */
-  margin-bottom: 15px; /* Reduced margin */
+  margin-bottom: 8px; /* Further reduced */
 }
 
 .header h2 {
@@ -67,7 +68,7 @@ body {
 
 /* Header Navigation */
 .header-nav {
-  margin-top: 10px; /* Reduced margin */
+  margin-top: 5px; /* Further reduced */
 }
 
 .header-nav .nav {
@@ -79,7 +80,7 @@ body {
   color: #e0e0e0; /* Auxiliary color */
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  padding: 10px 15px;
+  padding: 8px 15px; /* Reduced vertical padding */
   transition: color 0.3s ease, background 0.3s ease;
   pointer-events: auto; /* Ensure links are clickable */
   cursor: pointer; /* Indicate clickability */
@@ -120,7 +121,7 @@ body {
 .main-content {
   width: 100%; /* Full width */
   padding: 20px;
-  padding-top: 250px; /* Adjusted for reduced header height */
+  padding-top: 200px; /* Adjusted for reduced header height */
   background-color: #1a1a1a;
   display: block; /* Ensure visibility */
   visibility: visible; /* Ensure visibility */
@@ -242,21 +243,26 @@ a:hover {
 /* Back to Top Button */
 .back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   background: #4da8da; /* Theme color */
   color: #e0e0e0; /* Auxiliary color */
-  width: 50px;
-  height: 50px;
+  width: 60px; /* Increased size */
+  height: 60px; /* Increased size */
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  border: 2px solid #e0e0e0; /* Added border for prominence */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  opacity: 0.7; /* Semi-transparent by default */
+  opacity: 0.8; /* Slightly increased opacity */
   transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
   pointer-events: auto; /* Ensure clickable */
   z-index: 1000;
+}
+
+.back-to-top i {
+  font-size: 1.5rem; /* Increased icon size */
 }
 
 .back-to-top:hover {
@@ -294,11 +300,11 @@ footer {
   }
 
   .header-nav .nav-link {
-    padding: 10px 0;
+    padding: 8px 0; /* Adjusted vertical padding */
   }
 
   .main-content {
-    padding-top: 350px; /* Adjusted for reduced header height on smaller screens */
+    padding-top: 300px; /* Adjusted for reduced header height on smaller screens */
   }
 }
 
@@ -324,9 +330,13 @@ footer {
   }
 
   .back-to-top {
-    width: 40px;
-    height: 40px;
-    bottom: 10px;
-    right: 10px;
+    width: 50px; /* Adjusted size for smaller screens */
+    height: 50px; /* Adjusted size for smaller screens */
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .back-to-top i {
+    font-size: 1.2rem; /* Adjusted icon size for smaller screens */
   }
 }
