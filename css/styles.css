@@ -13,19 +13,13 @@ body {
   color: #e0e0e0; /* Auxiliary color for body text */
 }
 
-/* Main Container */
-.main-container {
-  min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 /* Sidebar */
 .sidebar {
+  width: 100%;
+  position: static;
   background: linear-gradient(135deg, #2a3b3c, #1c2526);
   padding: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   display: block; /* Ensure visibility */
 }
@@ -95,8 +89,11 @@ body {
 
 /* Main Content */
 .main-content {
-  background-color: #1a1a1a;
+  width: 100%;
+  min-height: 100vh;
   padding: 20px;
+  background-color: #1a1a1a;
+  display: block; /* Ensure visibility */
 }
 
 h2 {
@@ -126,6 +123,7 @@ section {
   min-height: 400px;
   padding: 60px 0;
   position: relative;
+  display: block; /* Ensure visibility */
 }
 
 /* Highlight Classes */
@@ -170,6 +168,7 @@ section {
   background: #2a2a2a;
   border: 1px solid #3a3a3a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Ensure visibility */
 }
 
 .content-box:hover, .experience-card:hover {
@@ -220,36 +219,20 @@ footer {
   color: #4da8da; /* Theme color */
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
+/* Responsive Design - Enable fixed sidebar on wider screens */
+@media (min-width: 992px) {
   .sidebar {
-    position: static;
-    height: auto;
-    box-shadow: none;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .main-content {
-    padding: 10px;
-  }
-
-  h1.display-4 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  section {
-    padding: 40px 0;
-  }
-
-  .intro-text {
-    font-size: 0.9rem;
-  }
-
-  .sidebar-nav .nav-link {
-    font-size: 1rem;
+    margin-left: 300px;
+    width: calc(100% - 300px);
   }
 }
 
@@ -260,6 +243,14 @@ footer {
 
   h2 {
     font-size: 1.5rem;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
   }
 
   .sidebar-nav .nav-link {
