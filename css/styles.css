@@ -133,6 +133,7 @@ section {
   padding: 60px 0;
   position: relative;
   display: block; /* Ensure visibility */
+  visibility: visible; /* Ensure visibility */
 }
 
 /* Highlight Classes */
@@ -145,24 +146,28 @@ section {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
 }
 
 .experience-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
 }
 
 .education-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
 }
 
 .skills-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
 }
 
 /* Section Divider */
@@ -171,6 +176,7 @@ section {
   background: #4da8da; /* Theme color */
   margin: 20px 0;
   display: block; /* Ensure visibility */
+  visibility: visible; /* Ensure visibility */
 }
 
 /* Content Boxes and Cards */
@@ -179,6 +185,7 @@ section {
   border: 1px solid #3a3a3a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block; /* Ensure visibility */
+  visibility: visible; /* Ensure visibility */
 }
 
 .content-box:hover, .experience-card:hover {
@@ -215,6 +222,7 @@ footer {
   margin-top: 20px;
   padding: 20px 0;
   display: block; /* Ensure visibility */
+  visibility: visible; /* Ensure visibility */
 }
 
 .gradient-footer {
