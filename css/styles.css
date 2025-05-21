@@ -26,20 +26,20 @@ body {
 }
 
 .header-container {
-  padding: 0; /* No padding */
-  margin: 0; /* No margin */
+  padding: 0;
+  margin: 0;
 }
 
 .header-content {
-  padding: 5px 15px; /* Minimal padding for content */
+  padding: 5px 15px 0 15px; /* Remove bottom padding */
   margin: 0;
 }
 
-.header-content h1, .header-content p {
+.header-content h1 {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1; /* Minimal line height */
+  line-height: 1;
 }
 
 .header-title {
@@ -47,16 +47,6 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   color: #4da8da; /* Theme color */
-}
-
-.header-subtitle {
-  font-size: 1rem;
-  color: #4da8da; /* Theme color */
-}
-
-.header-intro {
-  font-size: 0.95rem;
-  color: #e0e0e0; /* Auxiliary color */
 }
 
 .header-nav {
@@ -68,15 +58,15 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap; /* Allow wrapping if needed */
-  background: rgba(0, 0, 0, 0.2); /* Slight background for contrast */
+  margin-top: 0; /* Explicitly set */
+  display: block; /* Prevent flexbox spacing issues */
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .nav-item {
   margin: 0;
   padding: 0;
+  display: inline-block; /* Inline-block for horizontal layout */
 }
 
 .nav-link {
@@ -90,7 +80,7 @@ body {
   pointer-events: auto;
   cursor: pointer;
   text-decoration: none;
-  line-height: 1; /* Minimal line height */
+  line-height: 1;
 }
 
 .nav-link:hover {
@@ -108,7 +98,7 @@ body {
 .nav-link[href="#experience"]:target,
 .nav-link[href="#education"]:target,
 .nav-link[href="#skills"]:target {
-  color: #4da8da; /* Highlight active section */
+  color: #4da8da;
   font-weight: 600;
 }
 
@@ -116,7 +106,7 @@ body {
 .main-content {
   width: 100%;
   padding: 20px;
-  padding-top: 100px; /* Initial padding-top, to be adjusted after diagnosing header height */
+  padding-top: 80px; /* Adjusted for minimized header height (title + nav) */
   background-color: #1a1a1a;
   display: block;
   visibility: visible;
@@ -301,6 +291,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 992px) {
   .header-nav .nav-list {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -310,7 +301,7 @@ footer {
   }
 
   .main-content {
-    padding-top: 200px; /* Adjusted for stacked header height */
+    padding-top: 120px; /* Adjusted for minimized header height */
   }
 }
 
@@ -325,10 +316,6 @@ footer {
 
   section {
     padding: 50px 0;
-  }
-
-  .header-intro {
-    font-size: 0.9rem;
   }
 
   .header-nav .nav-link {
