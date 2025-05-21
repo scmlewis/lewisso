@@ -1,10 +1,11 @@
 /* Reset and General Styles */
-html, body {
+html {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
+  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
 }
 
 body {
@@ -89,6 +90,7 @@ body {
   color: #4da8da; /* Theme color */
   text-decoration: none;
   transition: color 0.3s ease;
+  pointer-events: auto; /* Ensure links are clickable */
 }
 
 .sidebar a:hover {
