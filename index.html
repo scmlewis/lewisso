@@ -201,18 +201,29 @@
   <script>
     // Ensure the DOM is fully loaded before running the script
     document.addEventListener('DOMContentLoaded', function() {
-      // Smooth Scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      console.log('DOM fully loaded, initializing navigation script.');
+
+      // Select all navigation links
+      const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+      console.log('Found navigation links:', navLinks);
+
+      // Add click event listeners to each navigation link
+      navLinks.forEach(anchor => {
+        console.log('Binding click event to:', anchor);
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
+          console.log('Navigating to:', targetId);
           const target = document.querySelector(targetId);
           if (target) {
+            console.log('Target found:', target);
             const offsetTop = target.getBoundingClientRect().top + window.pageYOffset;
             window.scrollTo({
               top: offsetTop,
               behavior: 'smooth'
             });
+          } else {
+            console.log('Target not found for:', targetId);
           }
         });
       });
