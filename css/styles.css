@@ -1,26 +1,33 @@
-/* General Styles */
+/* Reset and General Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #1a1a1a;
   color: #e0e0e0;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  display: flex;
-  flex-direction: row;
 }
 
-/* Sidebar (Fixed Header and About Me) */
+/* Main Container */
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sidebar */
 .sidebar {
-  width: 300px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #1c2526, #2a3b3c);
-  overflow-y: auto;
+  background: linear-gradient(135deg, #2a3b3c, #1c2526);
   padding: 20px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1000;
+  display: block; /* Ensure visibility */
 }
 
 .sidebar h1, .sidebar h2, .sidebar h4 {
@@ -28,14 +35,14 @@ body {
 }
 
 .sidebar h1.display-4 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 600;
   letter-spacing: 1px;
   color: #4da8da; /* Blue */
 }
 
 .sidebar h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
   position: relative;
   color: #2ec4b6; /* Teal */
@@ -56,14 +63,44 @@ body {
 }
 
 .sidebar .intro-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #c0c0c0;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav .nav-link {
+  color: #b0b0b0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #2ec4b6; /* Teal on hover */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+.sidebar-nav .nav-link i {
+  color: #4da8da;
+}
+
+/* Sidebar Links */
+.sidebar a {
+  color: #4da8da;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #ff6f61; /* Coral on hover */
 }
 
 /* Main Content */
 .main-content {
-  margin-left: 300px;
-  width: calc(100% - 300px);
+  background-color: #1a1a1a;
+  padding: 20px;
 }
 
 h2 {
@@ -186,20 +223,15 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
+@media (max-width: 992px) {
   .sidebar {
-    width: 100%;
-    position: relative;
+    position: static;
     height: auto;
+    box-shadow: none;
   }
 
   .main-content {
-    margin-left: 0;
-    width: 100%;
+    padding: 10px;
   }
 
   h1.display-4 {
@@ -217,6 +249,10 @@ footer {
   .intro-text {
     font-size: 0.9rem;
   }
+
+  .sidebar-nav .nav-link {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -226,5 +262,9 @@ footer {
 
   h2 {
     font-size: 1.5rem;
+  }
+
+  .sidebar-nav .nav-link {
+    font-size: 0.9rem;
   }
 }
