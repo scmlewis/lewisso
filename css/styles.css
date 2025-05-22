@@ -183,4 +183,162 @@ section {
 }
 
 .experience-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
+}
+
+.education-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
+}
+
+.skills-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: #2a2a2a; /* Fallback color */
+}
+
+/* Section Divider */
+.section-divider {
+  height: 5px;
+  background: #4da8da; /* Theme color */
+  margin: 40px 0;
+  display: block;
+  visibility: visible;
+}
+
+/* Content Boxes and Cards */
+.content-box, .experience-card {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  visibility: visible;
+}
+
+.content-box:hover, .experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card {
+  margin-bottom: 30px;
+}
+
+.experience-card h4 {
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  color: #e0e0e0; /* Auxiliary color */
+  font-style: italic;
+}
+
+/* Links */
+a {
+  color: #4da8da; /* Theme color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  pointer-events: auto;
+}
+
+a:hover {
+  color: #e0e0e0; /* Auxiliary color */
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  display: block;
+  visibility: visible;
+}
+
+.gradient-footer {
+  background: linear-gradient(90deg, #0d0d0d, #1a1a1a);
+}
+
+.social-links i {
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+
+.social-links i:hover {
+  color: #4da8da;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 150px; /* Smaller sidebar on smaller screens */
+    top: 50px; /* Adjust for smaller header height */
+    height: calc(100vh - 50px);
+  }
+
+  .main-content {
+    width: calc(100% - 150px);
+    margin-left: 150px;
+    padding-top: 100px; /* Adjust for smaller header */
+  }
+
+  .nav-link {
+    padding: 8px 0;
+    margin: 3px 0;
+  }
+
+  /* Offset for Anchor Links (smaller header on mobile) */
+  section[id]::before {
+    height: 90px; /* Adjusted for mobile: header (~49px) + <h2> (~24px) + buffer (~10px) */
+    margin-top: -90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  /* Show hamburger menu on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Sidebar on mobile: hidden by default */
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+    width: 150px;
+  }
+
+  /* Sidebar when visible */
+  .sidebar--visible {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  /* Main content adjusts based on sidebar visibility */
+  .main-content {
+    width: 100%;
+    margin-left: 0; /* No margin when sidebar is hidden */
+  }
+
+  .main-content--shifted {
+    margin-left: 150px; /* Shift when sidebar is visible */
+    width: calc(100% - 150px);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
