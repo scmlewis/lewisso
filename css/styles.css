@@ -78,13 +78,18 @@ body {
   height: calc(100vh - 60px); /* Full height minus header */
   background: linear-gradient(135deg, #2a3b3c, #1c2526);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 1000; /* Ensure sidebar is above main content */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
   transform: translateX(-100%); /* Collapsed by default on all devices */
   transition: transform 0.3s ease; /* Smooth transition for toggling */
+  overflow: visible; /* Ensure content isn’t clipped */
+}
+
+.sidebar--visible {
+  transform: translateX(0); /* Show sidebar when toggled */
 }
 
 .sidebar-nav {
@@ -93,6 +98,9 @@ body {
   align-items: center;
   padding: 0;
   width: 100%;
+  border: 1px solid red; /* Debugging: Red border to confirm visibility */
+  visibility: visible; /* Ensure nav is visible */
+  opacity: 1; /* Ensure nav is fully opaque */
 }
 
 .nav-link {
@@ -107,6 +115,8 @@ body {
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
+  visibility: visible; /* Ensure links are visible */
+  opacity: 1; /* Ensure links are fully opaque */
 }
 
 .nav-link:hover {
@@ -136,6 +146,7 @@ body {
   display: block;
   visibility: visible;
   transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for sidebar toggle */
+  z-index: 1; /* Ensure main content is below sidebar */
 }
 
 /* Main content when sidebar is visible */
