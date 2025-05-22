@@ -203,17 +203,43 @@
       const mainContent = document.querySelector('.main-content');
       const menuIconOpen = document.querySelector('.menu-icon-open');
       const menuIconClose = document.querySelector('.menu-icon-close');
+      const navLinks = document.querySelectorAll('.nav-link');
 
       if (menuToggle && sidebar && mainContent && menuIconOpen && menuIconClose) {
-        console.log('All elements found, adding click event listener.');
+        console.log('All elements found, adding click event listeners.');
+
+        // Function to close the sidebar
+        const closeSidebar = function() {
+          console.log('Closing sidebar.');
+          sidebar.classList.remove('sidebar--visible');
+          mainContent.classList.remove('main-content--shifted');
+          menuIconOpen.style.display = 'block';
+          menuIconClose.style.display = 'none';
+        };
+
+        // Toggle sidebar when clicking the hamburger menu button
         menuToggle.addEventListener('click', function() {
           console.log('Menu toggle clicked.');
           sidebar.classList.toggle('sidebar--visible');
           mainContent.classList.toggle('main-content--shifted');
-          // Toggle hamburger icon to "X" and back
           const isSidebarVisible = sidebar.classList.contains('sidebar--visible');
           menuIconOpen.style.display = isSidebarVisible ? 'none' : 'block';
           menuIconClose.style.display = isSidebarVisible ? 'block' : 'none';
+        });
+
+        // Close sidebar when clicking a navigation link
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(event) {
+            console.log('Navigation link clicked:', event.target.textContent);
+            // Store the current scroll position
+            const scrollPosition = window.scrollY;
+            // Close the sidebar
+            closeSidebar();
+            // Restore the scroll position after a brief delay to allow the sidebar to retract
+            setTimeout(() => {
+              window.scrollTo({ top: scrollPosition, behavior: 'instant' });
+            }, 300); // Match the CSS transition duration (0.3s)
+          });
         });
       } else {
         console.error('One or more elements not found:', {
@@ -221,7 +247,8 @@
           sidebar: !!sidebar,
           mainContent: !!mainContent,
           menuIconOpen: !!menuIconOpen,
-          menuIconClose: !!menuIconClose
+          menuIconClose: !!menuIconClose,
+          navLinks: navLinks.length
         });
       }
     });
