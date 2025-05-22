@@ -227,18 +227,14 @@
           menuIconClose.style.display = isSidebarVisible ? 'block' : 'none';
         });
 
-        // Close sidebar when clicking a navigation link
+        // Close sidebar when clicking a navigation link, without interfering with anchor navigation
         navLinks.forEach(link => {
           link.addEventListener('click', function(event) {
             console.log('Navigation link clicked:', event.target.textContent);
-            // Store the current scroll position
-            const scrollPosition = window.scrollY;
-            // Close the sidebar
-            closeSidebar();
-            // Restore the scroll position after a brief delay to allow the sidebar to retract
+            // Let the browser handle the default anchor navigation
             setTimeout(() => {
-              window.scrollTo({ top: scrollPosition, behavior: 'instant' });
-            }, 300); // Match the CSS transition duration (0.3s)
+              closeSidebar();
+            }, 300); // Delay to allow navigation to complete before retracting sidebar
           });
         });
       } else {
