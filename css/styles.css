@@ -43,6 +43,24 @@ body {
   text-align: center;
 }
 
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  position: absolute;
+  left: 15px;
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1002;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #4da8da;
+}
+
 /* Sidebar for Navigation */
 .sidebar {
   position: fixed;
@@ -57,6 +75,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+  transition: transform 0.3s ease; /* Smooth transition for toggling */
 }
 
 .sidebar-nav {
@@ -107,6 +126,7 @@ body {
   background-color: #1a1a1a;
   display: block;
   visibility: visible;
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for sidebar toggle */
 }
 
 /* Offset for Anchor Links (to account for fixed header) */
@@ -283,13 +303,31 @@ footer {
     font-size: 1.8rem;
   }
 
+  /* Show hamburger menu on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Sidebar on mobile: hidden by default */
   .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
     width: 150px;
   }
 
+  /* Sidebar when visible */
+  .sidebar--visible {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  /* Main content adjusts based on sidebar visibility */
   .main-content {
+    width: 100%;
+    margin-left: 0; /* No margin when sidebar is hidden */
+  }
+
+  .main-content--shifted {
+    margin-left: 150px; /* Shift when sidebar is visible */
     width: calc(100% - 150px);
-    margin-left: 150px;
   }
 
   h2 {
