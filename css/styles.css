@@ -57,7 +57,7 @@ body {
   transition: color 0.3s ease;
 }
 
-.menu-toggle:hover {
+.header .menu-toggle:hover {
   color: #4da8da;
 }
 
@@ -298,14 +298,16 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .header-title {
     font-size: 1.8rem;
   }
 
-  /* Show hamburger menu on mobile */
+  /* Show hamburger menu on mobile with very high specificity and debugging background */
   .header .menu-toggle {
-    display: block !important; /* Ensure visibility with higher specificity */
+    display: block !important; /* Ensure visibility */
+    background: red !important; /* Debugging: Bright background to confirm visibility */
+    padding: 5px; /* Add padding to make the button more visible */
   }
 
   /* Sidebar on mobile: hidden by default */
