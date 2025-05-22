@@ -78,7 +78,7 @@ body {
   height: calc(100vh - 60px); /* Full height minus header */
   background: linear-gradient(135deg, #2a3b3c, #1c2526);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Ensure sidebar is above main content */
+  z-index: 1000; /* Above main content */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +98,6 @@ body {
   align-items: center;
   padding: 0;
   width: 100%;
-  border: 1px solid red; /* Debugging: Red border to confirm visibility */
   visibility: visible; /* Ensure nav is visible */
   opacity: 1; /* Ensure nav is fully opaque */
 }
@@ -139,20 +138,13 @@ body {
 
 /* Main Content */
 .main-content {
-  width: 100%; /* Full width by default since sidebar is collapsed */
-  margin-left: 0; /* No margin by default */
+  width: 100%; /* Always full width since sidebar overlays */
+  margin-left: 0; /* No margin since sidebar overlays */
   padding: 120px 20px 20px 20px; /* Top padding to account for header */
   background-color: #1a1a1a;
   display: block;
   visibility: visible;
-  transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for sidebar toggle */
-  z-index: 1; /* Ensure main content is below sidebar */
-}
-
-/* Main content when sidebar is visible */
-.main-content--shifted {
-  margin-left: 200px; /* Shift when sidebar is visible */
-  width: calc(100% - 200px);
+  z-index: 1; /* Below sidebar */
 }
 
 /* Offset for Anchor Links (to account for fixed header) */
@@ -309,12 +301,6 @@ footer {
     top: 50px; /* Adjust for smaller header height */
     height: calc(100vh - 50px);
     width: 150px;
-  }
-
-  /* Main content when sidebar is visible */
-  .main-content--shifted {
-    margin-left: 150px; /* Adjusted for smaller sidebar width */
-    width: calc(100% - 150px);
   }
 
   .main-content {
