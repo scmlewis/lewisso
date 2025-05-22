@@ -17,7 +17,8 @@
   <!-- Header Section -->
   <header class="header" id="home">
     <button class="menu-toggle" aria-label="Toggle Sidebar">
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-bars menu-icon-open"></i>
+      <i class="fas fa-times menu-icon-close" style="display: none;"></i>
     </button>
     <h1 class="header-title">Lewis SO</h1>
   </header>
@@ -196,14 +197,31 @@
   <!-- Custom JavaScript for Sidebar Toggle -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM fully loaded, initializing sidebar toggle script.');
       const menuToggle = document.querySelector('.menu-toggle');
       const sidebar = document.querySelector('.sidebar');
       const mainContent = document.querySelector('.main-content');
+      const menuIconOpen = document.querySelector('.menu-icon-open');
+      const menuIconClose = document.querySelector('.menu-icon-close');
 
-      if (menuToggle && sidebar && mainContent) {
+      if (menuToggle && sidebar && mainContent && menuIconOpen && menuIconClose) {
+        console.log('All elements found, adding click event listener.');
         menuToggle.addEventListener('click', function() {
+          console.log('Menu toggle clicked.');
           sidebar.classList.toggle('sidebar--visible');
           mainContent.classList.toggle('main-content--shifted');
+          // Toggle hamburger icon to "X" and back
+          const isSidebarVisible = sidebar.classList.contains('sidebar--visible');
+          menuIconOpen.style.display = isSidebarVisible ? 'none' : 'block';
+          menuIconClose.style.display = isSidebarVisible ? 'block' : 'none';
+        });
+      } else {
+        console.error('One or more elements not found:', {
+          menuToggle: !!menuToggle,
+          sidebar: !!sidebar,
+          mainContent: !!mainContent,
+          menuIconOpen: !!menuIconOpen,
+          menuIconClose: !!menuIconClose
         });
       }
     });
