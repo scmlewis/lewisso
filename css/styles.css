@@ -45,7 +45,6 @@ body {
 
 /* Floating Hamburger Menu Button */
 .menu-toggle {
-  display: none; /* Hidden by default, shown on mobile */
   position: fixed;
   top: 15px;
   left: 15px;
@@ -75,7 +74,7 @@ body {
   position: fixed;
   top: 60px; /* Below the header (header height ~55px + padding) */
   left: 0;
-  width: 200px; /* Sidebar width on desktop */
+  width: 200px; /* Sidebar width */
   height: calc(100vh - 60px); /* Full height minus header */
   background: linear-gradient(135deg, #2a3b3c, #1c2526);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
@@ -84,6 +83,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+  transform: translateX(-100%); /* Collapsed by default on all devices */
   transition: transform 0.3s ease; /* Smooth transition for toggling */
 }
 
@@ -129,13 +129,19 @@ body {
 
 /* Main Content */
 .main-content {
-  width: calc(100% - 200px); /* Adjust for sidebar width */
-  margin-left: 200px; /* Shift content to the right */
+  width: 100%; /* Full width by default since sidebar is collapsed */
+  margin-left: 0; /* No margin by default */
   padding: 120px 20px 20px 20px; /* Top padding to account for header */
   background-color: #1a1a1a;
   display: block;
   visibility: visible;
   transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for sidebar toggle */
+}
+
+/* Main content when sidebar is visible */
+.main-content--shifted {
+  margin-left: 200px; /* Shift when sidebar is visible */
+  width: calc(100% - 200px);
 }
 
 /* Offset for Anchor Links (to account for fixed header) */
@@ -282,61 +288,32 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 991px) {
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  /* Sidebar width on mobile */
   .sidebar {
-    width: 150px; /* Smaller sidebar on smaller screens */
     top: 50px; /* Adjust for smaller header height */
     height: calc(100vh - 50px);
+    width: 150px;
+  }
+
+  /* Main content when sidebar is visible */
+  .main-content--shifted {
+    margin-left: 150px; /* Adjusted for smaller sidebar width */
+    width: calc(100% - 150px);
   }
 
   .main-content {
-    width: calc(100% - 150px);
-    margin-left: 150px;
     padding-top: 100px; /* Adjust for smaller header */
   }
 
   .nav-link {
     padding: 8px 0;
     margin: 3px 0;
-  }
-
-  /* Offset for Anchor Links (simplified header on mobile) */
-  section[id]::before {
-    height: 60px; /* Adjusted for mobile: header (~49px) + buffer (~10px) */
-    margin-top: -60px;
-  }
-}
-
-@media (max-width: 991px) {
-  .header-title {
-    font-size: 1.8rem;
-  }
-
-  /* Show floating hamburger menu on mobile */
-  .menu-toggle {
-    display: flex !important; /* Ensure visibility */
-  }
-
-  /* Sidebar on mobile: hidden by default */
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar off-screen */
-    width: 150px;
-  }
-
-  /* Sidebar when visible */
-  .sidebar--visible {
-    transform: translateX(0); /* Show sidebar */
-  }
-
-  /* Main content adjusts based on sidebar visibility */
-  .main-content {
-    width: 100%;
-    margin-left: 0; /* No margin when sidebar is hidden */
-  }
-
-  .main-content--shifted {
-    margin-left: 150px; /* Shift when sidebar is visible */
-    width: calc(100% - 150px);
+    font-size: 0.9rem;
   }
 
   h2 {
@@ -347,7 +324,9 @@ footer {
     padding: 50px 0;
   }
 
-  .nav-link {
-    font-size: 0.9rem;
+  /* Offset for Anchor Links (simplified header on mobile) */
+  section[id]::before {
+    height: 60px; /* Adjusted for mobile: header (~49px) + buffer (~10px) */
+    margin-top: -60px;
   }
 }
