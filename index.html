@@ -220,11 +220,13 @@
         };
 
         // Toggle sidebar when clicking the hamburger menu button
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(event) {
           console.log('Menu toggle clicked.');
+          event.preventDefault(); // Prevent any default behavior
           sidebar.classList.toggle('sidebar--visible');
           mainContent.classList.toggle('main-content--shifted');
           const isSidebarVisible = sidebar.classList.contains('sidebar--visible');
+          console.log('Sidebar visibility:', isSidebarVisible);
           menuIconOpen.style.display = isSidebarVisible ? 'none' : 'block';
           menuIconClose.style.display = isSidebarVisible ? 'block' : 'none';
         });
