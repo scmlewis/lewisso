@@ -1,306 +1,194 @@
-/* Reset and General Styles */
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
-}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lewis SO - Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header" id="home">
+    <h1 class="header-title">Lewis SO</h1>
+  </header>
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #1a1a1a;
-  color: #e0e0e0; /* Auxiliary color for body text */
-  margin: 0; /* Reset body margin */
-  padding: 0; /* Reset body padding */
-}
+  <!-- Sidebar for Navigation -->
+  <div class="sidebar">
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#about"><i class="fas fa-user me-2"></i>About Me</a>
+      <a class="nav-link" href="#experience"><i class="fas fa-briefcase me-2"></i>Experience</a>
+      <a class="nav-link" href="#education"><i class="fas fa-graduation-cap me-2"></i>Education</a>
+      <a class="nav-link" href="#skills"><i class="fas fa-star me-2"></i>Skills & Certifications</a>
+    </nav>
+  </div>
 
-/* Header */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, #2a3b3c, #1c2526);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1001; /* Above sidebar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-}
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- About Me Section -->
+    <section id="about" class="py-5 text-light about-bg">
+      <div class="container">
+        <h2><i class="fas fa-user me-2"></i>About Me</h2>
+        <div class="content-box p-4 rounded shadow-sm">
+          <p>With over 8 years of hands-on experience in consumer insights and market research, I specialize in helping brands understand their customers by analyzing data to uncover successes and opportunities. I excel in turning insights into compelling stories, leveraging my expertise in market research, business intelligence, and data analysis. Currently pursuing an MSc in Business Analytics at HKUST Business School.</p>
+          <h4>Contact</h4>
+          <p>
+            <i class="fas fa-envelope me-2"></i>Email: <a href="mailto:scmlewis@gmail.com">scmlewis@gmail.com</a><br>
+            <i class="fab fa-linkedin me-2"></i>LinkedIn: <a href="https://www.linkedin.com/in/lewisso" target="_blank">www.linkedin.com/in/lewisso</a>
+          </p>
+          <h4>Languages</h4>
+          <p>English (Professional Working), Cantonese (Native or Bilingual), Mandarin (Professional Working), Spanish (Elementary)</p>
+        </div>
+      </div>
+    </section>
 
-.header-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #4da8da; /* Theme color */
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  text-align: center;
-}
+    <div class="section-divider"></div>
 
-/* Sidebar for Navigation */
-.sidebar {
-  position: fixed;
-  top: 60px; /* Below the header (header height ~55px + padding) */
-  left: 0;
-  width: 200px; /* Sidebar width on desktop */
-  height: calc(100vh - 60px); /* Full height minus header */
-  background: linear-gradient(135deg, #2a3b3c, #1c2526);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-}
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 text-light experience-bg">
+      <div class="container">
+        <h2><i class="fas fa-briefcase me-2"></i>Experience</h2>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Customer Insight, Manager – AIA Hong Kong and Macau</h4>
+          <p><em>November 2024 – Present</em></p>
+          <ul>
+            <li>Leading customer insight initiatives to support business goals.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Assistant Manager, Customer Insight & Research – Prudential Hong Kong</h4>
+          <p><em>February 2023 – November 2024</em></p>
+          <ul>
+            <li>Conducted tracking and customerizing market research projects, e.g. brand tracker, NPS study, media effectiveness, product research. Communicated the results to LBUs to identify the growth potentials and room for improvements.</li>
+            <li>Monitored and managed for smooth research with vendors.</li>
+            <li>Gatekept deliverables from external parties to ensure the quality of deliveries to achieve the business goals.</li>
+            <li>Liaised with both local and regional stakeholders on regional research initiatives and gauging the quality of deliverable.</li>
+            <li>Identified enhancement directions on existing projects in research design, operation, logistics, and deliverable according to evolving needs.</li>
+            <li>Developed thematic surveys on wealth and health, such as Financial Wellbeing Index, Health Consciousness Index, designed to bolster public relations efforts and enhance the company's publicity.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Assistant Manager, Business Development – DKSH</h4>
+          <p><em>June 2022 – January 2023</em></p>
+          <ul>
+            <li>Facilitated in Business Development, from lead generation, development and pitching of proposals.</li>
+            <li>Negotiated in the closing of the sale in line with short-term and long-term financial goals for both new and existing clients.</li>
+            <li>Collaborated with internal stakeholders in identifying upselling opportunities, deal negotiations and finalization of contracts.</li>
+            <li>Established long-term relationships with potential FMCG clients and customers with the view to enhancing business opportunities.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Assistant Manager (Insight) – CMRS Group (HK)</h4>
+          <p><em>September 2021 – June 2022</em></p>
+          <ul>
+            <li>Led a small team to conduct in-depth analysis with data captured across social media channels, to deliver regular/ad hoc reports with actionable insights.</li>
+            <li>Maintained client relationships, led new business pitching, and presented appropriate plans to fulfil client needs.</li>
+            <li>Proposed innovative analytics and measurement initiatives that help clients advance in marketing efforts on digital media.</li>
+            <li>Served clients across industries, like properties & TV broadcast.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Senior Insights Executive – Engine</h4>
+          <p><em>September 2019 – September 2021</em></p>
+          <ul>
+            <li>Led end-to-end project management for international, large-scale complex research projects, such as NPS study, customer satisfaction, and brand health tracking.</li>
+            <li>Refined project direction to ensure timely and high-quality deliverables while maintaining contact with clients and evolving client satisfactions.</li>
+            <li>Coordinated internal and external resources in the project cycle with a focus on financial services and retailing industry clients.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Research Executive – Kantar</h4>
+          <p><em>May 2019 – August 2019</em></p>
+          <ul>
+            <li>Facilitated client relationship in the client servicing team on the quantitative research projects.</li>
+            <li>Created momentum in the research process, ranging from methodology, questionnaire management, fieldwork planning and research finding analysis.</li>
+            <li>Served industries in FMCG, retail, telecom, hospitality and property, with devotion to research projects, such as usage and attitude study, customer satisfaction, brand health tracking and media campaign evaluation.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Research Associate – Kantar</h4>
+          <p><em>February 2018 – April 2019</em></p>
+          <ul>
+            <li>Supported quantitative research projects across various industries.</li>
+          </ul>
+        </div>
+        <div class="experience-card p-4 mb-4 rounded shadow-sm">
+          <h4 class="highlight-blue">Specialist, Consumer Insight and Innovation Ops – Nielsen</h4>
+          <p><em>December 2016 – February 2018</em></p>
+          <ul>
+            <li>Liaised with the research team on project requirement, scheduling and required materials in the data acquisition team.</li>
+            <li>Supervised data collectors on training, work schedule, quality, and discipline in course of data collection.</li>
+            <li>Facilitated mega-sized research projects commissioned by governmental institutions, like HKTB and HKTD.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-.sidebar-nav {
-  display: flex;
-  flex-direction: column; /* Vertical layout for sidebar */
-  align-items: center;
-  padding: 0;
-  width: 100%;
-}
+    <div class="section-divider"></div>
 
-.nav-link {
-  color: #e0e0e0; /* Auxiliary color */
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  padding: 10px 0;
-  margin: 5px 0;
-  width: 100%;
-  text-align: center;
-  transition: color 0.3s ease, background 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 1;
-}
+    <!-- Education Section -->
+    <section id="education" class="py-5 text-light education-bg">
+      <div class="container">
+        <h2><i class="fas fa-graduation-cap me-2"></i>Education</h2>
+        <div class="content-box p-4 rounded shadow-sm">
+          <p><strong>HKUST Business School</strong><br>
+             Master of Science, Business Analytics (2024 – 2026)</p>
+          <p><strong>The Chinese University of Hong Kong</strong><br>
+             Bachelor of Social Science, Sociology</p>
+        </div>
+      </div>
+    </section>
 
-.nav-link:hover {
-  color: #4da8da; /* Theme color */
-  background: rgba(255, 255, 255, 0.05);
-}
+    <div class="section-divider"></div>
 
-.nav-link i {
-  color: #4da8da; /* Theme color */
-}
+    <!-- Skills & Certifications Section -->
+    <section id="skills" class="py-5 text-light skills-bg">
+      <div class="container">
+        <h2><i class="fas fa-star me-2"></i>Skills & Certifications</h2>
+        <div class="content-box p-4 rounded shadow-sm">
+          <h4>Top Skills</h4>
+          <ul>
+            <li class="highlight-blue">Customer Insights</li>
+            <li class="highlight-blue">Business Intelligence</li>
+            <li class="highlight-blue">Market Research</li>
+          </ul>
+          <h4>Certifications</h4>
+          <ul>
+            <li>Google Analytics Essential Training</li>
+            <li>Data Science and Machine Learning: Making Data-Driven Decisions</li>
+            <li>Data Science Certificate (Python)</li>
+            <li>Principles of Market Research</li>
+            <li>Complete Guide to Power BI for Data Analysts by Microsoft Press</li>
+          </ul>
+          <h4>Honors & Awards</h4>
+          <ul>
+            <li>Dean's List</li>
+            <li>Shaw College's Certificate of Academic Merit</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-/* Highlight Current Section */
-.nav-link[href="#about"]:target,
-.nav-link[href="#experience"]:target,
-.nav-link[href="#education"]:target,
-.nav-link[href="#skills"]:target {
-  color: #4da8da;
-  font-weight: 600;
-}
+    <!-- Footer -->
+    <footer class="py-4 text-light text-center gradient-footer">
+      <div class="container">
+        <p>© 2025 Lewis SO. All rights reserved.</p>
+        <div class="social-links">
+          <a href="mailto:scmlewis@gmail.com" class="me-3"><i class="fas fa-envelope fa-lg"></i></a>
+          <a href="https://www.linkedin.com/in/lewisso" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+        <p class="mt-3 small">Images sourced from <a href="https://unsplash.com" target="_blank">Unsplash</a>.</p>
+      </div>
+    </footer>
+  </div>
 
-/* Main Content */
-.main-content {
-  width: calc(100% - 200px); /* Adjust for sidebar width */
-  margin-left: 200px; /* Shift content to the right */
-  padding: 120px 20px 20px 20px; /* Top padding to account for header */
-  background-color: #1a1a1a;
-  display: block;
-  visibility: visible;
-}
-
-/* Offset for Anchor Links (to account for fixed header) */
-section[id]::before {
-  content: "";
-  display: block;
-  height: 110px; /* Adjusted for desktop: header (~55px) + <h2> (~40px) + buffer (~10px) */
-  margin-top: -110px; /* Negative margin to position above the section */
-  visibility: hidden;
-}
-
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  position: relative;
-  color: #4da8da; /* Theme color */
-}
-
-h2::after {
-  content: '';
-  width: 50px;
-  height: 3px;
-  background: #4da8da; /* Theme color */
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-}
-
-h4 {
-  font-family: 'Poppins', sans-serif;
-  color: #4da8da; /* Theme color */
-}
-
-section {
-  min-height: 500px;
-  padding: 80px 0;
-  position: relative;
-  display: block;
-  visibility: visible;
-}
-
-/* Highlight Classes */
-.highlight-blue {
-  color: #4da8da; /* Theme color */
-}
-
-/* Section Backgrounds with Images and Overlays */
-.about-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-  background-size: cover;
-  background-position: center;
-  background-color: #2a2a2a; /* Fallback color */
-}
-
-.experience-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-  background-size: cover;
-  background-position: center;
-  background-color: #2a2a2a; /* Fallback color */
-}
-
-.education-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-  background-size: cover;
-  background-position: center;
-  background-color: #2a2a2a; /* Fallback color */
-}
-
-.skills-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-  background-size: cover;
-  background-position: center;
-  background-color: #2a2a2a; /* Fallback color */
-}
-
-/* Section Divider */
-.section-divider {
-  height: 5px;
-  background: #4da8da; /* Theme color */
-  margin: 40px 0;
-  display: block;
-  visibility: visible;
-}
-
-/* Content Boxes and Cards */
-.content-box, .experience-card {
-  background: #2a2a2a;
-  border: 1px solid #3a3a3a;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block;
-  visibility: visible;
-}
-
-.content-box:hover, .experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.experience-card {
-  margin-bottom: 30px;
-}
-
-.experience-card h4 {
-  margin-bottom: 10px;
-}
-
-.experience-card p {
-  color: #e0e0e0; /* Auxiliary color */
-  font-style: italic;
-}
-
-/* Links */
-a {
-  color: #4da8da; /* Theme color */
-  text-decoration: none;
-  transition: color 0.3s ease;
-  pointer-events: auto;
-}
-
-a:hover {
-  color: #e0e0e0; /* Auxiliary color */
-}
-
-/* Footer */
-footer {
-  margin-top: 40px;
-  padding: 20px 0;
-  display: block;
-  visibility: visible;
-}
-
-.gradient-footer {
-  background: linear-gradient(90deg, #0d0d0d, #1a1a1a);
-}
-
-.social-links i {
-  color: #e0e0e0;
-  transition: color 0.3s ease;
-}
-
-.social-links i:hover {
-  color: #4da8da;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .sidebar {
-    width: 150px; /* Smaller sidebar on smaller screens */
-    top: 50px; /* Adjust for smaller header height */
-    height: calc(100vh - 50px);
-  }
-
-  .main-content {
-    width: calc(100% - 150px);
-    margin-left: 150px;
-    padding-top: 100px; /* Adjust for smaller header */
-  }
-
-  .nav-link {
-    padding: 8px 0;
-    margin: 3px 0;
-  }
-
-  /* Offset for Anchor Links (smaller header on mobile) */
-  section[id]::before {
-    height: 90px; /* Adjusted for mobile: header (~49px) + <h2> (~24px) + buffer (~10px) */
-    margin-top: -90px;
-  }
-}
-
-@media (max-width: 576px) {
-  .header-title {
-    font-size: 1.8rem;
-  }
-
-  .sidebar {
-    width: 150px;
-  }
-
-  .main-content {
-    width: calc(100% - 150px);
-    margin-left: 150px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  section {
-    padding: 50px 0;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
-  }
-}
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
