@@ -24,7 +24,7 @@ body {
   width: 100%;
   background: linear-gradient(135deg, #2a3b3c, #1c2526);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1001; /* Above sidebar, below menu button */
+  z-index: 1001; /* Above main content, below back-to-top button */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,84 +43,38 @@ body {
   text-align: center;
 }
 
-/* Floating Hamburger Menu Button */
-.menu-toggle {
+/* Top Navigation */
+.top-nav {
   position: fixed;
-  top: 15px;
-  left: 15px;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
-  border: none;
-  border-radius: 50%; /* Circular button */
-  color: #e0e0e0;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1002; /* Above header and sidebar */
-  transition: color 0.3s ease, background 0.3s ease;
-  padding: 10px; /* Larger click area */
-  width: 40px; /* Fixed width for circular shape */
-  height: 40px; /* Fixed height for circular shape */
+  top: 55px; /* Below header (header height ~55px) */
+  left: 0;
+  width: 100%;
+  background: #1c2526; /* Match header background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Below header, above main content */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.menu-toggle:hover {
-  color: #4da8da;
-  background: rgba(0, 0, 0, 0.9);
-}
-
-/* Sidebar for Navigation */
-.sidebar {
-  position: fixed;
-  top: 60px; /* Below the header (header height ~55px + padding) */
-  left: 0;
-  width: 200px; /* Sidebar width */
-  height: calc(100vh - 60px); /* Full height minus header */
-  background: linear-gradient(135deg, #2a3b3c, #1c2526);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Above main content */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  transform: translateX(-100%); /* Collapsed by default on all devices */
-  transition: transform 0.3s ease; /* Smooth transition for toggling */
-  overflow: visible; /* Ensure content isn’t clipped */
-}
-
-.sidebar--visible {
-  transform: translateX(0); /* Show sidebar when toggled */
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column; /* Vertical layout for sidebar */
-  align-items: center;
-  padding: 0;
-  width: 100%;
-  visibility: visible; /* Ensure nav is visible */
-  opacity: 1; /* Ensure nav is fully opaque */
+  padding: 10px 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .nav-link {
   color: #e0e0e0; /* Auxiliary color */
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  padding: 10px 0;
-  margin: 5px 0;
-  width: 100%;
-  text-align: center;
+  padding: 8px 15px;
+  margin: 0 5px;
   transition: color 0.3s ease, background 0.3s ease;
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
-  visibility: visible; /* Ensure links are visible */
-  opacity: 1; /* Ensure links are fully opaque */
 }
 
 .nav-link:hover {
   color: #4da8da; /* Theme color */
   background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
 }
 
 .nav-link i {
@@ -138,20 +92,20 @@ body {
 
 /* Main Content */
 .main-content {
-  width: 100%; /* Always full width since sidebar overlays */
-  margin-left: 0; /* No margin since sidebar overlays */
-  padding: 120px 20px 20px 20px; /* Top padding to account for header */
+  width: 100%; /* Full width at all times */
+  margin-left: 0; /* No margin */
+  padding: 120px 20px 20px 20px; /* Top padding to account for header and top-nav */
   background-color: #1a1a1a;
   display: block;
   visibility: visible;
-  z-index: 1; /* Below sidebar */
+  z-index: 1; /* Below header and top-nav */
 }
 
-/* Offset for Anchor Links (to account for fixed header) */
+/* Offset for Anchor Links (to account for fixed header and top-nav) */
 section[id]::before {
   content: "";
   display: block;
-  height: 110px; /* Adjusted for desktop: header (~55px) + <h2> (~40px) + buffer (~10px) */
+  height: 110px; /* Adjusted for desktop: header (~55px) + top-nav (~40px) + buffer (~15px) */
   margin-top: -110px; /* Negative margin to position above the section */
   visibility: hidden;
 }
@@ -269,6 +223,33 @@ a:hover {
   color: #e0e0e0; /* Auxiliary color */
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(77, 168, 218, 0.8); /* Theme color with transparency */
+  border: none;
+  border-radius: 50%;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1002; /* Above header and main content */
+  transition: background 0.3s ease, opacity 0.3s ease;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: none; /* Hidden by default, shown via JS */
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.back-to-top:hover {
+  background: rgba(77, 168, 218, 1);
+  opacity: 1;
+}
+
 /* Footer */
 footer {
   margin-top: 40px;
@@ -296,21 +277,21 @@ footer {
     font-size: 1.8rem;
   }
 
-  /* Sidebar width on mobile */
-  .sidebar {
-    top: 50px; /* Adjust for smaller header height */
-    height: calc(100vh - 50px);
-    width: 150px;
-  }
-
-  .main-content {
-    padding-top: 100px; /* Adjust for smaller header */
+  .top-nav {
+    top: 49px; /* Below smaller header (~49px) */
+    padding: 5px 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-link {
-    padding: 8px 0;
-    margin: 3px 0;
     font-size: 0.9rem;
+    padding: 6px 10px;
+    margin: 3px 5px;
+  }
+
+  .main-content {
+    padding-top: 100px; /* Adjust for smaller header and top-nav */
   }
 
   h2 {
@@ -323,7 +304,7 @@ footer {
 
   /* Offset for Anchor Links (simplified header on mobile) */
   section[id]::before {
-    height: 60px; /* Adjusted for mobile: header (~49px) + buffer (~10px) */
-    margin-top: -60px;
+    height: 100px; /* Adjusted for mobile: header (~49px) + top-nav (~36px) + buffer (~15px) */
+    margin-top: -100px;
   }
 }
