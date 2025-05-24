@@ -16,6 +16,18 @@ body {
   padding: 0;
 }
 
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #4da8da;
+  width: 0;
+  z-index: 1002;
+  transition: width 0.3s ease;
+}
+
 /* Header */
 .header {
   position: fixed;
@@ -94,7 +106,7 @@ body {
   margin: 5px 0;
   width: 100%;
   text-align: center;
-  transition: color 0.3s ease, background 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease; /* Smooth hover transition */
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
@@ -138,10 +150,35 @@ section[id]::before {
   visibility: hidden;
 }
 
+/* Section Fade-In Animation */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-bottom: 40px; /* Uniform spacing */
+  min-height: 500px;
+  padding: 80px 0;
+  position: relative;
+  display: block;
+  visibility: visible;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
   position: relative;
   color: #4da8da; /* Theme color */
 }
@@ -158,15 +195,46 @@ h2::after {
 
 h4 {
   font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
   color: #4da8da; /* Theme color */
 }
 
-section {
-  min-height: 500px;
-  padding: 80px 0;
-  position: relative;
+p, ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Content Boxes and Cards */
+.content-box, .experience-card {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
   visibility: visible;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px; /* Uniform spacing */
+}
+
+.content-box:hover, .experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card {
+  margin-bottom: 30px;
+}
+
+.experience-card h4 {
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  color: #e0e0e0; /* Auxiliary color */
+  font-style: italic;
 }
 
 /* Highlight Classes */
@@ -212,33 +280,6 @@ section {
   visibility: visible;
 }
 
-/* Content Boxes and Cards */
-.content-box, .experience-card {
-  background: #2a2a2a;
-  border: 1px solid #3a3a3a;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block;
-  visibility: visible;
-}
-
-.content-box:hover, .experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.experience-card {
-  margin-bottom: 30px;
-}
-
-.experience-card h4 {
-  margin-bottom: 10px;
-}
-
-.experience-card p {
-  color: #e0e0e0; /* Auxiliary color */
-  font-style: italic;
-}
-
 /* Links */
 a {
   color: #4da8da; /* Theme color */
@@ -249,6 +290,33 @@ a {
 
 a:hover {
   color: #e0e0e0; /* Auxiliary color */
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(77, 168, 218, 0.8);
+  border: none;
+  border-radius: 50%;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1002;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: none; /* Hidden initially */
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.back-to-top:hover {
+  background: rgba(77, 168, 218, 1);
+  opacity: 1;
 }
 
 /* Footer */
